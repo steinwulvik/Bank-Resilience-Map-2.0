@@ -66,7 +66,6 @@ export interface DemoState {
   taskStatus: Record<string, TaskStatus>;
   customTasks: CustomTask[];
   log: LogEntry[];
-  guide: boolean;
   /** 2.0: avkryssede sjekkpunkter per planlagt endring (indeks i sjekklisten). */
   changeChecks: Record<string, number[]>;
   /** 2.0: beslutninger om planlagte endringer. Uavhengig av scenarioet. */
@@ -89,7 +88,6 @@ const initial: DemoState = {
   taskStatus: {},
   customTasks: [],
   log: [],
-  guide: false,
   changeChecks: {},
   changeLog: [],
   mode: 'incident',
@@ -157,7 +155,7 @@ export function sanitize(raw: unknown): DemoState {
       if (findingIds.has(k) && (v === 'open' || v === 'inProgress' || v === 'closed')) findingStatus[k] = v;
   const kept = { changeChecks, changeLog, userExercises, userFindings, findingStatus };
   const scenarioId = typeof raw.scenarioId === 'string' && scenariosById[raw.scenarioId] ? raw.scenarioId : null;
-  if (!scenarioId) return { ...initial, guide: raw.guide === true, ...kept };
+  if (!scenarioId) return { ...initial, ...kept };
   const p = raw.params;
   const params =
     isObj(p) && typeof p.targetId === 'string' && nodesById[p.targetId] && Array.isArray(p.regions) &&
@@ -188,7 +186,6 @@ export function sanitize(raw: unknown): DemoState {
     taskStatus,
     customTasks,
     log,
-    guide: raw.guide === true,
     mode: raw.mode === 'exercise' ? 'exercise' : 'incident',
     ...kept,
   };
@@ -212,7 +209,6 @@ interface DemoApi {
   setTaskStatus: (id: string, s: TaskStatus) => void;
   addCustomTask: (t: CustomTask) => void;
   addDecision: (text: string, role: string, taskId?: string) => void;
-  setGuide: (on: boolean) => void;
   toggleChangeCheck: (changeId: string, index: number) => void;
   decideChange: (changeId: string, outcome: ChangeOutcome, reason: string, role: string) => void;
   addFinding: (f: Omit<UserFinding, 'id'>) => void;
@@ -254,7 +250,6 @@ export function DemoProvider({ children }: { children: ReactNode }) {
           : s.userExercises;
       return {
         ...initial,
-        guide: s.guide,
         changeChecks: s.changeChecks,
         changeLog: s.changeLog,
         userFindings: s.userFindings,
@@ -286,7 +281,6 @@ export function DemoProvider({ children }: { children: ReactNode }) {
         ...s,
         log: [...s.log, { id: uid(), at: new Date().toISOString(), kind: 'decision', text, role, taskId }],
       })),
-    setGuide: (guide) => setState((s) => ({ ...s, guide })),
     toggleChangeCheck: (changeId, index) =>
       setState((s) => {
         const cur = s.changeChecks[changeId] ?? [];
