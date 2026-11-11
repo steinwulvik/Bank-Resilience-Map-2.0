@@ -8,12 +8,11 @@ const PREVENT_ROUTES: RouteName[] = ['suppliers', 'changes', 'exercises'];
 
 export default function IntroPage() {
   const { m, lt } = useI18n();
-  const { runScenario, setGuide } = useDemo();
+  const { runScenario } = useDemo();
 
   const startGuided = () => {
     const sc = dataset.scenarios[0];
     runScenario(sc.id, sc.defaults);
-    setGuide(false); // Veiledningen er skjult som standard; brukeren kan vise den selv.
     navigate('scenario');
   };
 
