@@ -71,42 +71,13 @@ const no = {
     ],
     startTitle: 'Klar til å prøve?',
     ctaGuided: 'Gå til demoen',
-    ctaGuidedHint: 'Du starter i scenarioverkstedet med en guidet gjennomgang som tar omtrent 3 minutter. Du kan hoppe over veiledningen når som helst. Ingen konto eller personopplysninger.',
+    ctaGuidedHint: 'Se den korte veiledningen først, eller gå rett til demoen. Du starter i scenarioverkstedet med et ferdig utfylt scenario. Ingen konto eller personopplysninger.',
     principleTitle: 'Prinsipp: vis det man vet, og det man ikke vet',
     principle:
       'Hver påvirkning kan spores gjennom synlige avhengigheter. Antatte, utdaterte og manglende opplysninger merkes tydelig i stedet for å bli skjult.',
   },
   guide: {
     label: 'Veiledning',
-    stepOf: 'Steg {n} av {total}',
-    hide: 'Skjul veiledning',
-    show: 'Vis veiledning',
-    next: 'Neste steg',
-    steps: {
-      scenario: {
-        title: 'Velg scenario',
-        text: 'Demoen har to typer hendelser:',
-        items: [
-          '**Svikt hos leverandør:** Velg leverandøren som feiler. Landene leverandøren driver i, vises automatisk og regnes som berørt.',
-          '**Feil etter systemendring:** Velg systemet som fikk feil etter en planlagt endring.',
-        ],
-        after:
-          'Velg deretter alvorlighet, forventet varighet og om scenarioet kjøres som hendelse eller øvelse. Varigheten sammenlignes med tjenestenes gjenopprettingsmål. Trykk «Beregn påvirkning» når du er klar.',
-      },
-      analysis: {
-        title: 'Se påvirkningen',
-        text: 'Kartet viser hvordan feilen sprer seg fra venstre mot kundene til høyre: rødt er nede, rødt med striper kan være nede, oransje er redusert og grønt fungerer. Klikk på et objekt for å se prosessen og hvorfor det er berørt. Velg «Liste» for en tabell over tjenestene.',
-      },
-      incident: {
-        title: 'Koordiner responsen',
-        text: 'Her følger du hendelsen: endre status, marker oppgaver og legg inn en beslutning. Alt får tidsstempel.',
-      },
-      report: {
-        title: 'Del oppsummeringen',
-        text: 'Rapporten samler scenario, påvirkning, antakelser, datamangler og tiltak. Den kan skrives ut eller lagres som PDF.',
-      },
-    },
-    done: 'Ferdig! Prøv også Leverandører, Endringer og Øvelser og funn i menyen øverst.',
   },
   kinds: {
     channel: 'Kanal',
