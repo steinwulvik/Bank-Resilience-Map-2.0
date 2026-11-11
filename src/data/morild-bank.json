@@ -1,0 +1,2490 @@
+{
+  "bank": {
+    "name": "Morild Bank",
+    "description": {
+      "no": "Morild Bank er en oppdiktet nordisk bank laget for denne demonstrasjonen.",
+      "en": "Morild Bank is a fictional Nordic bank made for this demonstration."
+    },
+    "synthetic": true
+  },
+  "asOf": "2026-11-01",
+  "regionNames": {
+    "no": {
+      "no": "Norge",
+      "en": "Norway"
+    },
+    "se": {
+      "no": "Sverige",
+      "en": "Sweden"
+    },
+    "dk": {
+      "no": "Danmark",
+      "en": "Denmark"
+    },
+    "fi": {
+      "no": "Finland",
+      "en": "Finland"
+    }
+  },
+  "staleAfterDays": 365,
+  "nodes": [
+    {
+      "id": "ch-mobile",
+      "kind": "channel",
+      "name": {
+        "no": "Mobilbank",
+        "en": "Mobile bank"
+      },
+      "description": {
+        "no": "Bankens app for privatkunder.",
+        "en": "The bank's app for retail customers."
+      },
+      "criticality": "critical",
+      "owner": {
+        "no": "Leder digitale kanaler",
+        "en": "Head of digital channels"
+      },
+      "status": "operational",
+      "synthetic": true
+    },
+    {
+      "id": "ch-web",
+      "kind": "channel",
+      "name": {
+        "no": "Nettbank",
+        "en": "Online bank"
+      },
+      "description": {
+        "no": "Nettleserbasert bank for privat- og småbedriftskunder.",
+        "en": "Browser-based bank for retail and small business customers."
+      },
+      "criticality": "critical",
+      "owner": {
+        "no": "Leder digitale kanaler",
+        "en": "Head of digital channels"
+      },
+      "status": "operational",
+      "synthetic": true
+    },
+    {
+      "id": "ch-contact",
+      "kind": "channel",
+      "name": {
+        "no": "Kundesenter",
+        "en": "Customer centre"
+      },
+      "description": {
+        "no": "Telefon og chat med rådgivere.",
+        "en": "Phone and chat with advisers."
+      },
+      "criticality": "high",
+      "owner": {
+        "no": "Leder kundesenter",
+        "en": "Head of customer centre"
+      },
+      "status": "operational",
+      "synthetic": true
+    },
+    {
+      "id": "ch-pos",
+      "kind": "channel",
+      "name": {
+        "no": "Kort i butikk og på nett",
+        "en": "Cards in shops and online"
+      },
+      "description": {
+        "no": "Kortbetaling hos brukersteder.",
+        "en": "Card payments at merchants."
+      },
+      "criticality": "critical",
+      "owner": {
+        "no": "Tjenesteeier kort",
+        "en": "Service owner, cards"
+      },
+      "status": "operational",
+      "synthetic": true
+    },
+    {
+      "id": "svc-accounts",
+      "kind": "service",
+      "name": {
+        "no": "Kontooversikt og saldo",
+        "en": "Accounts and balances"
+      },
+      "description": {
+        "no": "Viser kontoer, saldo og bevegelser.",
+        "en": "Shows accounts, balances and transactions."
+      },
+      "criticality": "critical",
+      "owner": {
+        "no": "Tjenesteeier dagligbank",
+        "en": "Service owner, everyday banking"
+      },
+      "status": "operational",
+      "rtoMinutes": 240,
+      "rpoMinutes": 15,
+      "synthetic": true
+    },
+    {
+      "id": "svc-payments",
+      "kind": "service",
+      "name": {
+        "no": "Innenlands betaling",
+        "en": "Domestic payments"
+      },
+      "description": {
+        "no": "Regningsbetaling og overføringer mellom kontoer.",
+        "en": "Bill payments and transfers between accounts."
+      },
+      "criticality": "critical",
+      "owner": {
+        "no": "Tjenesteeier betaling",
+        "en": "Service owner, payments"
+      },
+      "status": "operational",
+      "rtoMinutes": 120,
+      "rpoMinutes": 0,
+      "synthetic": true
+    },
+    {
+      "id": "svc-cards",
+      "kind": "service",
+      "name": {
+        "no": "Kortbetaling",
+        "en": "Card payments"
+      },
+      "description": {
+        "no": "Autorisasjon av kortkjøp i butikk og på nett.",
+        "en": "Authorisation of card purchases in shops and online."
+      },
+      "criticality": "critical",
+      "owner": {
+        "no": "Tjenesteeier kort",
+        "en": "Service owner, cards"
+      },
+      "status": "operational",
+      "rtoMinutes": 60,
+      "rpoMinutes": 0,
+      "synthetic": true
+    },
+    {
+      "id": "svc-login",
+      "kind": "service",
+      "name": {
+        "no": "Innlogging og identifisering",
+        "en": "Login and identification"
+      },
+      "description": {
+        "no": "Sikker innlogging for kunder i digitale kanaler.",
+        "en": "Secure login for customers in digital channels."
+      },
+      "criticality": "critical",
+      "owner": {
+        "no": "Leder identitet og tilgang",
+        "en": "Head of identity and access"
+      },
+      "status": "operational",
+      "rtoMinutes": 60,
+      "rpoMinutes": 0,
+      "synthetic": true
+    },
+    {
+      "id": "svc-loans",
+      "kind": "service",
+      "name": {
+        "no": "Lånesøknad",
+        "en": "Loan application"
+      },
+      "description": {
+        "no": "Søknad og kredittvurdering for forbrukslån og boliglån.",
+        "en": "Application and credit assessment for consumer loans and mortgages."
+      },
+      "criticality": "high",
+      "owner": {
+        "no": "Tjenesteeier kreditt",
+        "en": "Service owner, credit"
+      },
+      "status": "operational",
+      "rtoMinutes": 1440,
+      "rpoMinutes": 60,
+      "synthetic": true
+    },
+    {
+      "id": "svc-support",
+      "kind": "service",
+      "name": {
+        "no": "Kundehenvendelser",
+        "en": "Customer enquiries"
+      },
+      "description": {
+        "no": "Saksbehandling av henvendelser fra kunder.",
+        "en": "Case handling of enquiries from customers."
+      },
+      "criticality": "medium",
+      "owner": {
+        "no": "Leder kundesenter",
+        "en": "Head of customer centre"
+      },
+      "status": "operational",
+      "rtoMinutes": 480,
+      "rpoMinutes": 60,
+      "synthetic": true
+    },
+    {
+      "id": "svc-notify",
+      "kind": "service",
+      "name": {
+        "no": "Varsler og meldinger",
+        "en": "Alerts and messages"
+      },
+      "description": {
+        "no": "SMS- og push-varsler om betalinger, innlogging og mistenkelig aktivitet.",
+        "en": "SMS and push alerts about payments, logins and suspicious activity."
+      },
+      "criticality": "medium",
+      "owner": {
+        "no": "Tjenesteeier kundekommunikasjon",
+        "en": "Service owner, customer communication"
+      },
+      "status": "degraded",
+      "dataGaps": [
+        {
+          "no": "Varslingstjenesten har meldt forsinkede SMS-er siste døgn; årsak er ikke registrert.",
+          "en": "The notification service has reported delayed text messages in the last 24 hours; the cause is not registered."
+        }
+      ],
+      "rtoMinutes": 720,
+      "rpoMinutes": 60,
+      "synthetic": true
+    },
+    {
+      "id": "svc-aml",
+      "kind": "service",
+      "name": {
+        "no": "Transaksjonsovervåking (AML)",
+        "en": "Transaction monitoring (AML)"
+      },
+      "description": {
+        "no": "Overvåking av transaksjoner for hvitvasking og svindel.",
+        "en": "Monitoring of transactions for money laundering and fraud."
+      },
+      "criticality": "high",
+      "owner": {
+        "no": "Leder hvitvaskingskontroll",
+        "en": "Head of anti-money laundering"
+      },
+      "status": "operational",
+      "rtoMinutes": 1440,
+      "rpoMinutes": 240,
+      "synthetic": true
+    },
+    {
+      "id": "sys-core",
+      "kind": "system",
+      "name": {
+        "no": "Kjernebanksystem",
+        "en": "Core banking system"
+      },
+      "description": {
+        "no": "Konti, saldo og posteringer. Leveres og driftes av kjernebankleverandøren.",
+        "en": "Accounts, balances and postings. Delivered and operated by the core banking supplier."
+      },
+      "criticality": "critical",
+      "owner": {
+        "no": "Forvaltning kjernebank",
+        "en": "Core banking management"
+      },
+      "status": "operational",
+      "environment": "managed",
+      "synthetic": true
+    },
+    {
+      "id": "sys-pay",
+      "kind": "system",
+      "name": {
+        "no": "Betalingsmotor",
+        "en": "Payment engine"
+      },
+      "description": {
+        "no": "Behandler og sender betalinger til avregning.",
+        "en": "Processes payments and sends them for clearing."
+      },
+      "criticality": "critical",
+      "owner": {
+        "no": "Betalingsteamet",
+        "en": "Payments team"
+      },
+      "status": "operational",
+      "environment": "onPrem",
+      "synthetic": true
+    },
+    {
+      "id": "sys-card",
+      "kind": "system",
+      "name": {
+        "no": "Kortplattform",
+        "en": "Card platform"
+      },
+      "description": {
+        "no": "Kobler bankens kort mot kortprosessøren.",
+        "en": "Connects the bank's cards to the card processor."
+      },
+      "criticality": "critical",
+      "owner": {
+        "no": "Kortteamet",
+        "en": "Cards team"
+      },
+      "status": "operational",
+      "environment": "saas",
+      "synthetic": true
+    },
+    {
+      "id": "sys-api",
+      "kind": "system",
+      "name": {
+        "no": "Integrasjonsplattform (API)",
+        "en": "Integration platform (API)"
+      },
+      "description": {
+        "no": "Felles API-lag mellom kanaler og bakenforliggende systemer.",
+        "en": "Shared API layer between channels and back-end systems."
+      },
+      "criticality": "critical",
+      "owner": {
+        "no": "Integrasjonsteamet",
+        "en": "Integration team"
+      },
+      "status": "operational",
+      "dataGaps": [
+        {
+          "no": "Flytting til Sverige ved bortfall er planlagt, men ikke etablert.",
+          "en": "Failover to Sweden in an outage is planned but not in place."
+        }
+      ],
+      "environment": "cloud",
+      "synthetic": true
+    },
+    {
+      "id": "sys-iam",
+      "kind": "system",
+      "name": {
+        "no": "Identitetsplattform",
+        "en": "Identity platform"
+      },
+      "description": {
+        "no": "Innlogging, sesjoner og tilgangskontroll for kunder.",
+        "en": "Login, sessions and access control for customers."
+      },
+      "criticality": "critical",
+      "owner": {
+        "no": "IAM-teamet",
+        "en": "IAM team"
+      },
+      "status": "operational",
+      "environment": "cloud",
+      "synthetic": true
+    },
+    {
+      "id": "sys-mob",
+      "kind": "system",
+      "name": {
+        "no": "Mobilbank-backend",
+        "en": "Mobile bank back end"
+      },
+      "description": {
+        "no": "Serverlogikk for mobilappen.",
+        "en": "Server logic for the mobile app."
+      },
+      "criticality": "critical",
+      "owner": {
+        "no": "Mobilteamet",
+        "en": "Mobile team"
+      },
+      "status": "operational",
+      "environment": "cloud",
+      "synthetic": true
+    },
+    {
+      "id": "sys-web",
+      "kind": "system",
+      "name": {
+        "no": "Nettbankplattform",
+        "en": "Online bank platform"
+      },
+      "description": {
+        "no": "Webapplikasjon for nettbanken.",
+        "en": "Web application for the online bank."
+      },
+      "criticality": "critical",
+      "owner": {
+        "no": "Nettbankteamet",
+        "en": "Online bank team"
+      },
+      "status": "operational",
+      "environment": "cloud",
+      "synthetic": true
+    },
+    {
+      "id": "sys-loan",
+      "kind": "system",
+      "name": {
+        "no": "Lånemotor",
+        "en": "Loan engine"
+      },
+      "description": {
+        "no": "Søknadsbehandling og saksflyt for lån.",
+        "en": "Application processing and case flow for loans."
+      },
+      "criticality": "high",
+      "owner": {
+        "no": "Kredittteamet",
+        "en": "Credit team"
+      },
+      "status": "operational",
+      "environment": "cloud",
+      "synthetic": true
+    },
+    {
+      "id": "sys-credit",
+      "kind": "system",
+      "name": {
+        "no": "Kredittvurdering",
+        "en": "Credit assessment"
+      },
+      "description": {
+        "no": "Henter kredittopplysninger og beregner betjeningsevne.",
+        "en": "Retrieves credit information and calculates debt-servicing capacity."
+      },
+      "criticality": "high",
+      "owner": {
+        "no": "Kredittteamet",
+        "en": "Credit team"
+      },
+      "status": "operational",
+      "environment": "cloud",
+      "synthetic": true
+    },
+    {
+      "id": "sys-crm",
+      "kind": "system",
+      "name": {
+        "no": "Kundesaksbehandling (CRM)",
+        "en": "Customer case handling (CRM)"
+      },
+      "description": {
+        "no": "Saksbehandlingsverktøy for kundesenteret, levert som SaaS.",
+        "en": "Case handling tool for the customer centre, delivered as SaaS."
+      },
+      "criticality": "medium",
+      "owner": {
+        "no": "CRM-forvalter",
+        "en": "CRM administrator"
+      },
+      "status": "operational",
+      "environment": "saas",
+      "synthetic": true
+    },
+    {
+      "id": "sys-notify",
+      "kind": "system",
+      "name": {
+        "no": "Varslingstjeneste",
+        "en": "Notification service"
+      },
+      "description": {
+        "no": "Sender SMS- og push-varsler.",
+        "en": "Sends SMS and push alerts."
+      },
+      "criticality": "medium",
+      "owner": {
+        "no": "Kommunikasjonsteamet",
+        "en": "Communications team"
+      },
+      "status": "degraded",
+      "environment": "cloud",
+      "synthetic": true
+    },
+    {
+      "id": "sys-aml",
+      "kind": "system",
+      "name": {
+        "no": "Overvåkingsmotor (AML)",
+        "en": "Monitoring engine (AML)"
+      },
+      "description": {
+        "no": "Regelmotor for mistenkelige transaksjoner.",
+        "en": "Rules engine for suspicious transactions."
+      },
+      "criticality": "high",
+      "owner": {
+        "no": "Analyseteamet",
+        "en": "Analytics team"
+      },
+      "status": "operational",
+      "environment": "onPrem",
+      "synthetic": true
+    },
+    {
+      "id": "sys-dwh",
+      "kind": "system",
+      "name": {
+        "no": "Datavarehus",
+        "en": "Data warehouse"
+      },
+      "description": {
+        "no": "Samler transaksjonsdata for analyse og rapportering.",
+        "en": "Collects transaction data for analysis and reporting."
+      },
+      "criticality": "high",
+      "owner": {
+        "no": "Analyseteamet",
+        "en": "Analytics team"
+      },
+      "status": "operational",
+      "environment": "cloud",
+      "synthetic": true
+    },
+    {
+      "id": "prv-nimbus",
+      "kind": "provider",
+      "name": {
+        "no": "Nimbus Sky",
+        "en": "Nimbus Sky"
+      },
+      "description": {
+        "no": "Skyplattform for bankens skybaserte systemer.",
+        "en": "Cloud platform for the bank's cloud-based systems."
+      },
+      "criticality": "critical",
+      "owner": {
+        "no": "Leverandøransvarlig sky",
+        "en": "Supplier manager, cloud"
+      },
+      "status": "operational",
+      "serviceType": {
+        "no": "Skyplattform (IaaS/PaaS)",
+        "en": "Cloud platform (IaaS/PaaS)"
+      },
+      "regions": [
+        "no",
+        "se",
+        "dk",
+        "fi"
+      ],
+      "alternatives": {
+        "no": "Datasentre i andre nordiske land hos samme leverandør. Ingen avtale med alternativ skyleverandør.",
+        "en": "Data centres in other Nordic countries at the same supplier. No agreement with an alternative cloud provider."
+      },
+      "directContract": true,
+      "contractOwner": {
+        "no": "Innkjøpsleder IT",
+        "en": "Head of IT procurement"
+      },
+      "exitPlan": "inProgress",
+      "substitutability": "hard",
+      "lastAssessed": "2026-05-15",
+      "exitTested": null,
+      "synthetic": true
+    },
+    {
+      "id": "prv-kortnord",
+      "kind": "provider",
+      "name": {
+        "no": "KortNord Prosessering",
+        "en": "KortNord Processing"
+      },
+      "description": {
+        "no": "Prosesserer kortautorisasjoner for flere nordiske banker.",
+        "en": "Processes card authorisations for several Nordic banks."
+      },
+      "criticality": "critical",
+      "owner": {
+        "no": "Tjenesteeier kort",
+        "en": "Service owner, cards"
+      },
+      "status": "operational",
+      "serviceType": {
+        "no": "Kortprosessering",
+        "en": "Card processing"
+      },
+      "regions": [
+        "no",
+        "dk"
+      ],
+      "alternatives": {
+        "no": "Stand-in-autorisasjon med reservegrenser i inntil 4 timer.",
+        "en": "Stand-in authorisation with fallback limits for up to 4 hours."
+      },
+      "directContract": true,
+      "contractOwner": {
+        "no": "Tjenesteeier kort",
+        "en": "Service owner, cards"
+      },
+      "exitPlan": "exists",
+      "substitutability": "hard",
+      "lastAssessed": "2026-06-20",
+      "exitTested": "2025-10-08",
+      "synthetic": true
+    },
+    {
+      "id": "prv-clearing",
+      "kind": "provider",
+      "name": {
+        "no": "Avregningssentralen",
+        "en": "Avregningssentralen (clearing house)"
+      },
+      "description": {
+        "no": "Felles infrastruktur for avregning av betalinger.",
+        "en": "Shared infrastructure for clearing payments."
+      },
+      "criticality": "critical",
+      "owner": {
+        "no": "Tjenesteeier betaling",
+        "en": "Service owner, payments"
+      },
+      "status": "operational",
+      "serviceType": {
+        "no": "Betalingsinfrastruktur",
+        "en": "Payment infrastructure"
+      },
+      "regions": [
+        "no"
+      ],
+      "alternatives": {
+        "no": "Ingen alternativ leverandør. Manuell beredskapsrutine for hastebetalinger.",
+        "en": "No alternative supplier. Manual contingency procedure for urgent payments."
+      },
+      "directContract": true,
+      "contractOwner": {
+        "no": "Tjenesteeier betaling",
+        "en": "Service owner, payments"
+      },
+      "exitPlan": "missing",
+      "substitutability": "notPossible",
+      "lastAssessed": "2026-03-02",
+      "exitTested": null,
+      "synthetic": true
+    },
+    {
+      "id": "prv-saksflyt",
+      "kind": "provider",
+      "name": {
+        "no": "Saksflyt AS",
+        "en": "Saksflyt AS"
+      },
+      "description": {
+        "no": "Leverer saksbehandlingsverktøyet for kundesenteret.",
+        "en": "Supplies the case handling tool for the customer centre."
+      },
+      "criticality": "medium",
+      "owner": {
+        "no": "CRM-forvalter",
+        "en": "CRM administrator"
+      },
+      "status": "operational",
+      "dataGaps": [
+        {
+          "no": "Leverandøren har ikke oppgitt hvilken skyleverandør og hvilket land tjenesten kjører i.",
+          "en": "The supplier has not stated which cloud provider and which country the service runs in."
+        }
+      ],
+      "serviceType": {
+        "no": "SaaS – saksbehandling",
+        "en": "SaaS – case handling"
+      },
+      "regions": [
+        "no"
+      ],
+      "alternatives": {
+        "no": "Kundesenteret kan registrere saker i regneark midlertidig.",
+        "en": "The customer centre can log cases in spreadsheets temporarily."
+      },
+      "directContract": true,
+      "contractOwner": {
+        "no": "CRM-forvalter",
+        "en": "CRM administrator"
+      },
+      "exitPlan": "exists",
+      "substitutability": "easy",
+      "lastAssessed": "2025-09-10",
+      "exitTested": null,
+      "synthetic": true
+    },
+    {
+      "id": "prv-kredittdata",
+      "kind": "provider",
+      "name": {
+        "no": "Kredittdata Norden",
+        "en": "Kredittdata Norden"
+      },
+      "description": {
+        "no": "Leverer kredittopplysninger.",
+        "en": "Supplies credit information."
+      },
+      "criticality": "high",
+      "owner": {
+        "no": "Tjenesteeier kreditt",
+        "en": "Service owner, credit"
+      },
+      "status": "operational",
+      "serviceType": {
+        "no": "Kredittopplysning",
+        "en": "Credit information"
+      },
+      "regions": [
+        "no",
+        "se",
+        "fi"
+      ],
+      "alternatives": {
+        "no": "Manuell kredittvurdering for prioriterte søknader.",
+        "en": "Manual credit assessment for prioritised applications."
+      },
+      "directContract": true,
+      "contractOwner": {
+        "no": "Tjenesteeier kreditt",
+        "en": "Service owner, credit"
+      },
+      "exitPlan": "exists",
+      "substitutability": "easy",
+      "lastAssessed": "2026-02-01",
+      "exitTested": "2026-02-01",
+      "synthetic": true
+    },
+    {
+      "id": "prv-smslinje",
+      "kind": "provider",
+      "name": {
+        "no": "SMS-Linje",
+        "en": "SMS-Linje"
+      },
+      "description": {
+        "no": "SMS-gateway for utsending av varsler.",
+        "en": "SMS gateway for sending alerts."
+      },
+      "criticality": "medium",
+      "owner": {
+        "no": "Tjenesteeier kundekommunikasjon",
+        "en": "Service owner, customer communication"
+      },
+      "status": "operational",
+      "serviceType": {
+        "no": "SMS-gateway",
+        "en": "SMS gateway"
+      },
+      "regions": [
+        "se",
+        "dk"
+      ],
+      "alternatives": {
+        "no": "Push-varsler i mobilbanken.",
+        "en": "Push alerts in the mobile bank."
+      },
+      "directContract": true,
+      "contractOwner": {
+        "no": "Tjenesteeier kundekommunikasjon",
+        "en": "Service owner, customer communication"
+      },
+      "exitPlan": "missing",
+      "substitutability": "easy",
+      "lastAssessed": null,
+      "exitTested": null,
+      "synthetic": true
+    },
+    {
+      "id": "prv-kjerne",
+      "kind": "provider",
+      "name": {
+        "no": "Kjernedrift Nord",
+        "en": "Kjernedrift Nord"
+      },
+      "description": {
+        "no": "Leverer og drifter kjernebanksystemet for Morild Bank og flere andre banker.",
+        "en": "Delivers and operates the core banking system for Morild Bank and several other banks."
+      },
+      "criticality": "critical",
+      "owner": {
+        "no": "Leverandøransvarlig kjernebank",
+        "en": "Supplier manager, core banking"
+      },
+      "status": "operational",
+      "serviceType": {
+        "no": "Kjernebank som driftet tjeneste",
+        "en": "Core banking as a managed service"
+      },
+      "regions": [
+        "no"
+      ],
+      "alternatives": {
+        "no": "Ingen alternativ leverandør på kort sikt. Bytte av kjernebankleverandør er et flerårig prosjekt.",
+        "en": "No alternative supplier in the short term. Changing core banking supplier is a multi-year project."
+      },
+      "directContract": true,
+      "contractOwner": {
+        "no": "Innkjøpsleder IT",
+        "en": "Head of IT procurement"
+      },
+      "exitPlan": "inProgress",
+      "substitutability": "hard",
+      "lastAssessed": "2026-04-10",
+      "exitTested": null,
+      "synthetic": true
+    },
+    {
+      "id": "prv-eid",
+      "kind": "provider",
+      "name": {
+        "no": "Bankfelles eID",
+        "en": "Bankfelles eID"
+      },
+      "description": {
+        "no": "Felles elektronisk identifisering som mange banker bruker til innlogging og signering.",
+        "en": "Shared electronic identification that many banks use for login and signing."
+      },
+      "criticality": "critical",
+      "owner": {
+        "no": "Leder identitet og tilgang",
+        "en": "Head of identity and access"
+      },
+      "status": "operational",
+      "serviceType": {
+        "no": "Elektronisk identifisering (eID)",
+        "en": "Electronic identification (eID)"
+      },
+      "regions": [
+        "no"
+      ],
+      "alternatives": {
+        "no": "Ingen fullgod reserveløsning. Kundesenteret kan hjelpe kunder, men digital innlogging stopper.",
+        "en": "No adequate fallback. The contact centre can help customers, but digital login stops."
+      },
+      "directContract": true,
+      "contractOwner": {
+        "no": "Leder identitet og tilgang",
+        "en": "Head of identity and access"
+      },
+      "exitPlan": "missing",
+      "substitutability": "notPossible",
+      "lastAssessed": "2026-05-30",
+      "exitTested": null,
+      "synthetic": true
+    },
+    {
+      "id": "prv-datahall",
+      "kind": "provider",
+      "name": {
+        "no": "Datahall Vest",
+        "en": "Datahall Vest"
+      },
+      "description": {
+        "no": "Driver datasenteret der KortNord Prosessering har sin norske plattform.",
+        "en": "Operates the data centre that hosts KortNord Prosessering's Norwegian platform."
+      },
+      "criticality": "high",
+      "owner": {
+        "no": "Tjenesteeier kort",
+        "en": "Service owner, cards"
+      },
+      "status": "operational",
+      "serviceType": {
+        "no": "Datasenter (kolokasjon)",
+        "en": "Data centre (colocation)"
+      },
+      "regions": [
+        "no"
+      ],
+      "alternatives": {
+        "no": "Ukjent. KortNord oppgir at Danmark kan ta all trafikk.",
+        "en": "Unknown. KortNord states that Denmark can take all traffic."
+      },
+      "directContract": false,
+      "synthetic": true
+    },
+    {
+      "id": "prv-nordnett",
+      "kind": "provider",
+      "name": {
+        "no": "Nordnett Mobil",
+        "en": "Nordnett Mobil"
+      },
+      "description": {
+        "no": "Mobiloperatør som leverer SMS-utsendingen videre for SMS-Linje.",
+        "en": "Mobile operator that delivers text messages on behalf of SMS-Linje."
+      },
+      "criticality": "medium",
+      "owner": {
+        "no": "Tjenesteeier kundekommunikasjon",
+        "en": "Service owner, customer communication"
+      },
+      "status": "operational",
+      "serviceType": {
+        "no": "Mobilnett og SMS-utsending",
+        "en": "Mobile network and SMS delivery"
+      },
+      "regions": [
+        "se",
+        "dk"
+      ],
+      "alternatives": {
+        "no": "Ukjent. Avtalen er mellom SMS-Linje og operatøren.",
+        "en": "Unknown. The contract is between SMS-Linje and the operator."
+      },
+      "directContract": false,
+      "synthetic": true
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "ch-mobile__sys-mob",
+      "from": "ch-mobile",
+      "to": "sys-mob",
+      "type": "uses",
+      "strength": "hard",
+      "source": {
+        "no": "CMDB",
+        "en": "CMDB"
+      },
+      "lastConfirmed": "2026-09-12",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "ch-mobile__svc-login",
+      "from": "ch-mobile",
+      "to": "svc-login",
+      "type": "uses",
+      "strength": "hard",
+      "source": {
+        "no": "Tjenestekatalog",
+        "en": "Service catalogue"
+      },
+      "lastConfirmed": "2026-08-20",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "ch-mobile__svc-accounts",
+      "from": "ch-mobile",
+      "to": "svc-accounts",
+      "type": "uses",
+      "strength": "soft",
+      "source": {
+        "no": "Tjenestekatalog",
+        "en": "Service catalogue"
+      },
+      "lastConfirmed": "2026-08-20",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "ch-mobile__svc-payments",
+      "from": "ch-mobile",
+      "to": "svc-payments",
+      "type": "uses",
+      "strength": "soft",
+      "source": {
+        "no": "Tjenestekatalog",
+        "en": "Service catalogue"
+      },
+      "lastConfirmed": "2026-08-20",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "ch-mobile__svc-notify",
+      "from": "ch-mobile",
+      "to": "svc-notify",
+      "type": "uses",
+      "strength": "soft",
+      "source": {
+        "no": "Tjenestekatalog",
+        "en": "Service catalogue"
+      },
+      "lastConfirmed": "2026-08-20",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "ch-web__sys-web",
+      "from": "ch-web",
+      "to": "sys-web",
+      "type": "uses",
+      "strength": "hard",
+      "source": {
+        "no": "CMDB",
+        "en": "CMDB"
+      },
+      "lastConfirmed": "2026-09-12",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "ch-web__svc-login",
+      "from": "ch-web",
+      "to": "svc-login",
+      "type": "uses",
+      "strength": "hard",
+      "source": {
+        "no": "Tjenestekatalog",
+        "en": "Service catalogue"
+      },
+      "lastConfirmed": "2026-08-20",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "ch-web__svc-accounts",
+      "from": "ch-web",
+      "to": "svc-accounts",
+      "type": "uses",
+      "strength": "soft",
+      "source": {
+        "no": "Tjenestekatalog",
+        "en": "Service catalogue"
+      },
+      "lastConfirmed": "2026-08-20",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "ch-web__svc-payments",
+      "from": "ch-web",
+      "to": "svc-payments",
+      "type": "uses",
+      "strength": "soft",
+      "source": {
+        "no": "Tjenestekatalog",
+        "en": "Service catalogue"
+      },
+      "lastConfirmed": "2026-08-20",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "ch-web__svc-loans",
+      "from": "ch-web",
+      "to": "svc-loans",
+      "type": "uses",
+      "strength": "soft",
+      "source": {
+        "no": "Tjenestekatalog",
+        "en": "Service catalogue"
+      },
+      "lastConfirmed": "2026-08-20",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "ch-contact__svc-support",
+      "from": "ch-contact",
+      "to": "svc-support",
+      "type": "uses",
+      "strength": "hard",
+      "source": {
+        "no": "Tjenestekatalog",
+        "en": "Service catalogue"
+      },
+      "lastConfirmed": "2026-06-02",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "ch-contact__svc-accounts",
+      "from": "ch-contact",
+      "to": "svc-accounts",
+      "type": "uses",
+      "strength": "soft",
+      "source": {
+        "no": "Tjenestekatalog",
+        "en": "Service catalogue"
+      },
+      "lastConfirmed": "2026-06-02",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "ch-pos__svc-cards",
+      "from": "ch-pos",
+      "to": "svc-cards",
+      "type": "uses",
+      "strength": "hard",
+      "source": {
+        "no": "Tjenestekatalog",
+        "en": "Service catalogue"
+      },
+      "lastConfirmed": "2026-10-01",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "svc-accounts__sys-core",
+      "from": "svc-accounts",
+      "to": "sys-core",
+      "type": "uses",
+      "strength": "hard",
+      "source": {
+        "no": "Tjenestekatalog",
+        "en": "Service catalogue"
+      },
+      "lastConfirmed": "2026-10-10",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "svc-accounts__sys-api",
+      "from": "svc-accounts",
+      "to": "sys-api",
+      "type": "uses",
+      "strength": "hard",
+      "source": {
+        "no": "Tjenestekatalog",
+        "en": "Service catalogue"
+      },
+      "lastConfirmed": "2026-10-10",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "svc-payments__sys-pay",
+      "from": "svc-payments",
+      "to": "sys-pay",
+      "type": "uses",
+      "strength": "hard",
+      "source": {
+        "no": "Tjenestekatalog",
+        "en": "Service catalogue"
+      },
+      "lastConfirmed": "2026-10-10",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "svc-payments__sys-api",
+      "from": "svc-payments",
+      "to": "sys-api",
+      "type": "uses",
+      "strength": "hard",
+      "source": {
+        "no": "Tjenestekatalog",
+        "en": "Service catalogue"
+      },
+      "lastConfirmed": "2026-10-10",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "svc-cards__sys-card",
+      "from": "svc-cards",
+      "to": "sys-card",
+      "type": "uses",
+      "strength": "hard",
+      "source": {
+        "no": "Tjenestekatalog",
+        "en": "Service catalogue"
+      },
+      "lastConfirmed": "2026-10-01",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "svc-login__sys-iam",
+      "from": "svc-login",
+      "to": "sys-iam",
+      "type": "uses",
+      "strength": "hard",
+      "source": {
+        "no": "Tjenestekatalog",
+        "en": "Service catalogue"
+      },
+      "lastConfirmed": "2026-09-30",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "svc-loans__sys-loan",
+      "from": "svc-loans",
+      "to": "sys-loan",
+      "type": "uses",
+      "strength": "hard",
+      "source": {
+        "no": "Workshop med tjenesteeier",
+        "en": "Workshop with service owner"
+      },
+      "lastConfirmed": "2026-03-14",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "svc-loans__sys-credit",
+      "from": "svc-loans",
+      "to": "sys-credit",
+      "type": "uses",
+      "strength": "hard",
+      "source": {
+        "no": "Workshop med tjenesteeier",
+        "en": "Workshop with service owner"
+      },
+      "lastConfirmed": "2026-03-14",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "svc-support__sys-crm",
+      "from": "svc-support",
+      "to": "sys-crm",
+      "type": "uses",
+      "strength": "hard",
+      "source": {
+        "no": "Tjenestekatalog",
+        "en": "Service catalogue"
+      },
+      "lastConfirmed": "2026-06-02",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "svc-support__sys-core",
+      "from": "svc-support",
+      "to": "sys-core",
+      "type": "uses",
+      "strength": "soft",
+      "source": {
+        "no": "Tjenestekatalog",
+        "en": "Service catalogue"
+      },
+      "lastConfirmed": "2026-06-02",
+      "validity": "confirmed",
+      "note": {
+        "no": "Rådgivere kan svare på generelle spørsmål uten kontoinformasjon.",
+        "en": "Advisers can answer general questions without account information."
+      },
+      "synthetic": true
+    },
+    {
+      "id": "svc-notify__sys-notify",
+      "from": "svc-notify",
+      "to": "sys-notify",
+      "type": "uses",
+      "strength": "hard",
+      "source": {
+        "no": "Tjenestekatalog",
+        "en": "Service catalogue"
+      },
+      "lastConfirmed": "2025-05-20",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "svc-aml__sys-aml",
+      "from": "svc-aml",
+      "to": "sys-aml",
+      "type": "uses",
+      "strength": "hard",
+      "source": {
+        "no": "Tjenestekatalog",
+        "en": "Service catalogue"
+      },
+      "lastConfirmed": "2026-07-01",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "sys-pay__sys-core",
+      "from": "sys-pay",
+      "to": "sys-core",
+      "type": "uses",
+      "strength": "hard",
+      "source": {
+        "no": "CMDB",
+        "en": "CMDB"
+      },
+      "lastConfirmed": "2026-09-12",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "sys-core__prv-kjerne",
+      "from": "sys-core",
+      "to": "prv-kjerne",
+      "type": "runsOn",
+      "strength": "hard",
+      "regions": [
+        "no"
+      ],
+      "source": {
+        "no": "Leverandørregister",
+        "en": "Supplier register"
+      },
+      "lastConfirmed": "2026-04-30",
+      "validity": "confirmed",
+      "note": {
+        "no": "Driftes i leverandørens to datasentre i Norge.",
+        "en": "Runs in the supplier's two data centres in Norway."
+      },
+      "synthetic": true
+    },
+    {
+      "id": "sys-iam__prv-eid",
+      "from": "sys-iam",
+      "to": "prv-eid",
+      "type": "uses",
+      "strength": "hard",
+      "regions": [
+        "no"
+      ],
+      "source": {
+        "no": "Leverandørregister",
+        "en": "Supplier register"
+      },
+      "lastConfirmed": "2026-04-30",
+      "validity": "confirmed",
+      "note": {
+        "no": "Kundene logger inn med felles eID. Bankens egen plattform håndterer sesjoner og tilganger.",
+        "en": "Customers log in with the shared eID. The bank's own platform handles sessions and access."
+      },
+      "synthetic": true
+    },
+    {
+      "id": "sys-pay__prv-clearing",
+      "from": "sys-pay",
+      "to": "prv-clearing",
+      "type": "uses",
+      "strength": "hard",
+      "regions": [
+        "no"
+      ],
+      "source": {
+        "no": "Leverandørregister",
+        "en": "Supplier register"
+      },
+      "lastConfirmed": "2026-04-30",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "sys-card__prv-kortnord",
+      "from": "sys-card",
+      "to": "prv-kortnord",
+      "type": "uses",
+      "strength": "hard",
+      "regions": [
+        "no",
+        "dk"
+      ],
+      "source": {
+        "no": "Leverandørregister",
+        "en": "Supplier register"
+      },
+      "lastConfirmed": "2026-04-30",
+      "validity": "confirmed",
+      "note": {
+        "no": "Aktiv-aktiv i Norge og Danmark.",
+        "en": "Active-active in Norway and Denmark."
+      },
+      "synthetic": true
+    },
+    {
+      "id": "sys-card__sys-core",
+      "from": "sys-card",
+      "to": "sys-core",
+      "type": "uses",
+      "strength": "soft",
+      "source": {
+        "no": "CMDB",
+        "en": "CMDB"
+      },
+      "lastConfirmed": "2026-09-12",
+      "validity": "confirmed",
+      "note": {
+        "no": "Kortautorisasjon kan kjøre med reservegrenser (stand-in) uten kjernebanken.",
+        "en": "Card authorisation can run with fallback limits (stand-in) without the core bank."
+      },
+      "synthetic": true
+    },
+    {
+      "id": "sys-api__prv-nimbus",
+      "from": "sys-api",
+      "to": "prv-nimbus",
+      "type": "runsOn",
+      "strength": "hard",
+      "regions": [
+        "no"
+      ],
+      "source": {
+        "no": "CMDB",
+        "en": "CMDB"
+      },
+      "lastConfirmed": "2026-09-12",
+      "validity": "confirmed",
+      "note": {
+        "no": "Kjører bare i Norge.",
+        "en": "Runs in Norway only."
+      },
+      "synthetic": true
+    },
+    {
+      "id": "sys-iam__prv-nimbus",
+      "from": "sys-iam",
+      "to": "prv-nimbus",
+      "type": "runsOn",
+      "strength": "hard",
+      "regions": [
+        "no",
+        "se"
+      ],
+      "source": {
+        "no": "CMDB",
+        "en": "CMDB"
+      },
+      "lastConfirmed": "2026-09-12",
+      "validity": "confirmed",
+      "note": {
+        "no": "Aktiv-aktiv i Norge og Sverige.",
+        "en": "Active-active in Norway and Sweden."
+      },
+      "synthetic": true
+    },
+    {
+      "id": "sys-mob__sys-api",
+      "from": "sys-mob",
+      "to": "sys-api",
+      "type": "uses",
+      "strength": "hard",
+      "source": {
+        "no": "CMDB",
+        "en": "CMDB"
+      },
+      "lastConfirmed": "2026-09-12",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "sys-mob__prv-nimbus",
+      "from": "sys-mob",
+      "to": "prv-nimbus",
+      "type": "runsOn",
+      "strength": "hard",
+      "regions": [
+        "no"
+      ],
+      "source": {
+        "no": "CMDB",
+        "en": "CMDB"
+      },
+      "lastConfirmed": "2026-09-12",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "sys-web__sys-api",
+      "from": "sys-web",
+      "to": "sys-api",
+      "type": "uses",
+      "strength": "hard",
+      "source": {
+        "no": "CMDB",
+        "en": "CMDB"
+      },
+      "lastConfirmed": "2026-09-12",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "sys-web__prv-nimbus",
+      "from": "sys-web",
+      "to": "prv-nimbus",
+      "type": "runsOn",
+      "strength": "hard",
+      "regions": [
+        "no",
+        "se"
+      ],
+      "source": {
+        "no": "CMDB",
+        "en": "CMDB"
+      },
+      "lastConfirmed": "2026-09-12",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "sys-loan__prv-nimbus",
+      "from": "sys-loan",
+      "to": "prv-nimbus",
+      "type": "runsOn",
+      "strength": "hard",
+      "regions": [
+        "no"
+      ],
+      "source": {
+        "no": "CMDB",
+        "en": "CMDB"
+      },
+      "lastConfirmed": "2026-09-12",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "sys-loan__sys-core",
+      "from": "sys-loan",
+      "to": "sys-core",
+      "type": "uses",
+      "strength": "hard",
+      "source": {
+        "no": "CMDB",
+        "en": "CMDB"
+      },
+      "lastConfirmed": "2026-09-12",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "sys-credit__prv-kredittdata",
+      "from": "sys-credit",
+      "to": "prv-kredittdata",
+      "type": "uses",
+      "strength": "hard",
+      "regions": [
+        "no"
+      ],
+      "source": {
+        "no": "Leverandørregister",
+        "en": "Supplier register"
+      },
+      "lastConfirmed": "2026-04-30",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "sys-credit__sys-api",
+      "from": "sys-credit",
+      "to": "sys-api",
+      "type": "dataFeed",
+      "strength": "hard",
+      "source": {
+        "no": "Antatt ut fra integrasjonsoppsett",
+        "en": "Assumed from the integration set-up"
+      },
+      "lastConfirmed": null,
+      "validity": "assumed",
+      "note": {
+        "no": "Ikke bekreftet i arkitekturdokumentasjonen.",
+        "en": "Not confirmed in the architecture documentation."
+      },
+      "synthetic": true
+    },
+    {
+      "id": "sys-crm__prv-saksflyt",
+      "from": "sys-crm",
+      "to": "prv-saksflyt",
+      "type": "runsOn",
+      "strength": "hard",
+      "regions": [
+        "no"
+      ],
+      "source": {
+        "no": "Leverandørregister",
+        "en": "Supplier register"
+      },
+      "lastConfirmed": "2026-04-30",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "sys-notify__prv-nimbus",
+      "from": "sys-notify",
+      "to": "prv-nimbus",
+      "type": "runsOn",
+      "strength": "hard",
+      "source": {
+        "no": "CMDB",
+        "en": "CMDB"
+      },
+      "lastConfirmed": "2026-02-11",
+      "validity": "confirmed",
+      "note": {
+        "no": "Land er ikke registrert i CMDB.",
+        "en": "Country is not registered in the CMDB."
+      },
+      "synthetic": true
+    },
+    {
+      "id": "sys-notify__prv-smslinje",
+      "from": "sys-notify",
+      "to": "prv-smslinje",
+      "type": "uses",
+      "strength": "hard",
+      "regions": [
+        "se"
+      ],
+      "source": {
+        "no": "Leverandørregister",
+        "en": "Supplier register"
+      },
+      "lastConfirmed": "2026-04-30",
+      "validity": "confirmed",
+      "note": {
+        "no": "Bruker bare SMS-Linjes plattform i Sverige.",
+        "en": "Uses only SMS-Linje's platform in Sweden."
+      },
+      "synthetic": true
+    },
+    {
+      "id": "sys-aml__sys-dwh",
+      "from": "sys-aml",
+      "to": "sys-dwh",
+      "type": "dataFeed",
+      "strength": "hard",
+      "source": {
+        "no": "Arkitekturdokumentasjon",
+        "en": "Architecture documentation"
+      },
+      "lastConfirmed": "2025-01-15",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "sys-dwh__prv-nimbus",
+      "from": "sys-dwh",
+      "to": "prv-nimbus",
+      "type": "runsOn",
+      "strength": "hard",
+      "regions": [
+        "se"
+      ],
+      "source": {
+        "no": "CMDB",
+        "en": "CMDB"
+      },
+      "lastConfirmed": "2026-09-12",
+      "validity": "confirmed",
+      "synthetic": true
+    },
+    {
+      "id": "prv-saksflyt__prv-nimbus",
+      "from": "prv-saksflyt",
+      "to": "prv-nimbus",
+      "type": "subcontractor",
+      "strength": "hard",
+      "source": {
+        "no": "Leverandørens egenerklæring",
+        "en": "Supplier's self-declaration"
+      },
+      "lastConfirmed": null,
+      "validity": "assumed",
+      "note": {
+        "no": "Saksflyt oppgir å bruke «en nordisk skyleverandør». Antatt Nimbus Sky; land ukjent.",
+        "en": "Saksflyt states that it uses «a Nordic cloud provider». Assumed to be Nimbus Sky; country unknown."
+      },
+      "synthetic": true
+    },
+    {
+      "id": "prv-kortnord__prv-datahall",
+      "from": "prv-kortnord",
+      "to": "prv-datahall",
+      "type": "subcontractor",
+      "strength": "soft",
+      "regions": [
+        "no"
+      ],
+      "source": {
+        "no": "Leverandørens egenerklæring",
+        "en": "Supplier's self-declaration"
+      },
+      "lastConfirmed": "2026-04-30",
+      "validity": "confirmed",
+      "note": {
+        "no": "Gjelder bare den norske plattformen. Den danske plattformen driftes i KortNords eget datasenter.",
+        "en": "Applies only to the Norwegian platform. The Danish platform runs in KortNord's own data centre."
+      },
+      "synthetic": true
+    },
+    {
+      "id": "prv-smslinje__prv-nordnett",
+      "from": "prv-smslinje",
+      "to": "prv-nordnett",
+      "type": "subcontractor",
+      "strength": "soft",
+      "regions": [
+        "se"
+      ],
+      "source": {
+        "no": "Leverandørens egenerklæring",
+        "en": "Supplier's self-declaration"
+      },
+      "lastConfirmed": "2024-10-02",
+      "validity": "confirmed",
+      "synthetic": true
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "sky-region",
+      "title": {
+        "no": "Svikt hos leverandør",
+        "en": "Supplier failure"
+      },
+      "summary": {
+        "no": "En leverandør melder om bortfall. Hvilke tjenester og kanaler kan rammes, og hvor er bildet usikkert?",
+        "en": "A supplier reports an outage. Which services and channels may be affected, and where is the picture uncertain?"
+      },
+      "failureType": "regionalProviderOutage",
+      "defaults": {
+        "targetId": "prv-nimbus",
+        "regions": [
+          "no",
+          "se",
+          "dk",
+          "fi"
+        ],
+        "severity": "outage",
+        "durationMinutes": 240
+      },
+      "durationOptions": [
+        60,
+        240,
+        720,
+        1440
+      ],
+      "startTime": "2026-11-03T07:42:00",
+      "assumptions": [
+        {
+          "no": "Leverandørens statusside er eneste kilde til omfanget den første halvtimen.",
+          "en": "The supplier's status page is the only source for the scope during the first half hour."
+        },
+        {
+          "no": "Systemer som kjører i flere land, flytter trafikken automatisk til landet som virker, men med redusert kapasitet.",
+          "en": "Systems that run in several countries move traffic automatically to the country that is working, but with reduced capacity."
+        },
+        {
+          "no": "Kjernebanksystemet og systemene i Morilds eget datasenter kjører ikke hos skyleverandøren og er ikke direkte berørt.",
+          "en": "The core banking system and the systems in Morild's own data centre do not run at the cloud provider and are not directly affected."
+        }
+      ],
+      "controlQuestions": [
+        {
+          "no": "Har leverandøren bekreftet omfang og forventet gjenopprettingstid?",
+          "en": "Has the supplier confirmed the scope and expected recovery time?"
+        },
+        {
+          "no": "Finnes det reserveløsninger eller alternative leverandører for de berørte tjenestene?",
+          "en": "Are there fallback solutions or alternative suppliers for the affected services?"
+        },
+        {
+          "no": "Må kunder informeres i kanalene som fortsatt virker?",
+          "en": "Do customers need to be informed in the channels that still work?"
+        },
+        {
+          "no": "Skal hendelsen vurderes for rapportering etter bankens rutiner for IKT-hendelser? (Vurderes av ansvarlig rolle, ikke av verktøyet.)",
+          "en": "Should the incident be assessed for reporting under the bank's procedures for ICT incidents? (Assessed by the responsible role, not by the tool.)"
+        }
+      ],
+      "timeline": [
+        {
+          "offsetMinutes": 0,
+          "text": {
+            "no": "Overvåkingen varsler feil i tjenester som bruker leverandøren.",
+            "en": "Monitoring reports errors in services that use the supplier."
+          }
+        },
+        {
+          "offsetMinutes": 6,
+          "text": {
+            "no": "Leverandøren bekrefter en hendelse med redusert tilgjengelighet.",
+            "en": "The supplier confirms an incident with reduced availability."
+          }
+        },
+        {
+          "offsetMinutes": 15,
+          "text": {
+            "no": "Beredskapsleder åpner hendelsesrom og kaller inn berørte team.",
+            "en": "The incident manager opens the incident room and calls in the affected teams."
+          }
+        },
+        {
+          "offsetMinutes": 30,
+          "text": {
+            "no": "Første konsekvensbilde deles med ledelsen.",
+            "en": "The first picture of the consequences is shared with management."
+          }
+        },
+        {
+          "offsetMinutes": 45,
+          "text": {
+            "no": "Kundesenteret får standardsvar om innloggings- og betalingsproblemer.",
+            "en": "The customer centre receives standard answers about login and payment problems."
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "id": "sky-t1",
+          "title": {
+            "no": "Bekreft omfang og forventet gjenoppretting med leverandøren",
+            "en": "Confirm the scope and expected recovery with the supplier"
+          },
+          "role": {
+            "no": "Leverandøransvarlig",
+            "en": "Supplier manager"
+          },
+          "dueMinutes": 30
+        },
+        {
+          "id": "sky-t2",
+          "title": {
+            "no": "Vurder om berørte systemer kan flyttes eller kjøres på en reserveløsning",
+            "en": "Assess whether affected systems can be moved or run on a fallback solution"
+          },
+          "role": {
+            "no": "Teknisk hendelsesleder",
+            "en": "Technical incident lead"
+          },
+          "dueMinutes": 60
+        },
+        {
+          "id": "sky-t3",
+          "title": {
+            "no": "Publiser driftsmelding i kanalene som virker",
+            "en": "Publish a service notice in the channels that work"
+          },
+          "role": {
+            "no": "Kommunikasjonsansvarlig",
+            "en": "Communications lead"
+          },
+          "dueMinutes": 45
+        },
+        {
+          "id": "sky-t4",
+          "title": {
+            "no": "Informer kundesenteret om berørte tjenester",
+            "en": "Inform the customer centre about affected services"
+          },
+          "role": {
+            "no": "Beredskapsleder",
+            "en": "Incident manager"
+          },
+          "dueMinutes": 45
+        },
+        {
+          "id": "sky-t5",
+          "title": {
+            "no": "Vurder om hendelsen skal rapporteres som alvorlig IKT-relatert hendelse",
+            "en": "Assess whether the incident must be reported as a major ICT-related incident"
+          },
+          "role": {
+            "no": "Operasjonell risiko",
+            "en": "Operational risk"
+          },
+          "dueMinutes": 120
+        }
+      ],
+      "decisions": [
+        {
+          "offsetMinutes": 20,
+          "text": {
+            "no": "Hendelsen klassifiseres foreløpig som alvorlig. Hendelsesrom etableres.",
+            "en": "The incident is provisionally classified as serious. An incident room is set up."
+          },
+          "role": {
+            "no": "Beredskapsleder",
+            "en": "Incident manager"
+          }
+        },
+        {
+          "offsetMinutes": 40,
+          "text": {
+            "no": "Ingen manuell flytting før leverandøren har bekreftet omfanget.",
+            "en": "No manual failover until the supplier has confirmed the scope."
+          },
+          "role": {
+            "no": "Teknisk hendelsesleder",
+            "en": "Technical incident lead"
+          },
+          "taskId": "sky-t2"
+        }
+      ],
+      "synthetic": true
+    },
+    {
+      "id": "failed-change",
+      "title": {
+        "no": "Feil etter systemendring",
+        "en": "Failure after a system change"
+      },
+      "summary": {
+        "no": "En planlagt oppgradering (endring CHG-2026-114) gir feil i produksjon. Hva avhenger av komponenten som ble endret?",
+        "en": "A planned upgrade (change CHG-2026-114) causes errors in production. What depends on the component that was changed?"
+      },
+      "failureType": "failedChange",
+      "defaults": {
+        "targetId": "sys-api",
+        "regions": [],
+        "severity": "outage",
+        "durationMinutes": 120
+      },
+      "durationOptions": [
+        30,
+        120,
+        240,
+        480
+      ],
+      "startTime": "2026-11-04T22:15:00",
+      "assumptions": [
+        {
+          "no": "Endringen ble satt i produksjon i et planlagt vedlikeholdsvindu.",
+          "en": "The change was put into production in a planned maintenance window."
+        },
+        {
+          "no": "Tilbakerulling er mulig, men ikke testet for denne versjonen.",
+          "en": "A rollback is possible but has not been tested for this version."
+        },
+        {
+          "no": "Feilen gjelder bare komponenten som ble endret.",
+          "en": "The fault only affects the component that was changed."
+        }
+      ],
+      "controlQuestions": [
+        {
+          "no": "Kan endringen rulles tilbake, og hvor lang tid tar det?",
+          "en": "Can the change be rolled back, and how long does it take?"
+        },
+        {
+          "no": "Ble avhengige tjenester identifisert i endringsvurderingen?",
+          "en": "Were dependent services identified in the change assessment?"
+        },
+        {
+          "no": "Må transaksjoner etterbehandles når komponenten virker igjen?",
+          "en": "Do transactions need to be reprocessed when the component works again?"
+        },
+        {
+          "no": "Hvilke forbedringer i endringsprosessen bør registreres etter hendelsen?",
+          "en": "Which improvements to the change process should be recorded after the incident?"
+        }
+      ],
+      "timeline": [
+        {
+          "offsetMinutes": 0,
+          "text": {
+            "no": "Endring CHG-2026-114 settes i produksjon.",
+            "en": "Change CHG-2026-114 is put into production."
+          }
+        },
+        {
+          "offsetMinutes": 8,
+          "text": {
+            "no": "Automatiske tester feiler for den endrede komponenten.",
+            "en": "Automated tests fail for the changed component."
+          }
+        },
+        {
+          "offsetMinutes": 14,
+          "text": {
+            "no": "Vaktansvarlig eskalerer til endringsansvarlig.",
+            "en": "The on-call engineer escalates to the change manager."
+          }
+        },
+        {
+          "offsetMinutes": 25,
+          "text": {
+            "no": "Hendelsesrom åpnes. Tilbakerulling vurderes.",
+            "en": "The incident room opens. A rollback is considered."
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "id": "chg-t1",
+          "title": {
+            "no": "Vurder tilbakerulling av endringen",
+            "en": "Assess rolling back the change"
+          },
+          "role": {
+            "no": "Endringsansvarlig",
+            "en": "Change manager"
+          },
+          "dueMinutes": 30
+        },
+        {
+          "id": "chg-t2",
+          "title": {
+            "no": "Informer kundesenteret om berørte tjenester",
+            "en": "Inform the customer centre about affected services"
+          },
+          "role": {
+            "no": "Beredskapsleder",
+            "en": "Incident manager"
+          },
+          "dueMinutes": 45
+        },
+        {
+          "id": "chg-t3",
+          "title": {
+            "no": "Kontroller transaksjoner som feilet under hendelsen",
+            "en": "Check transactions that failed during the incident"
+          },
+          "role": {
+            "no": "Betalingsteamet",
+            "en": "Payments team"
+          },
+          "dueMinutes": 120
+        },
+        {
+          "id": "chg-t4",
+          "title": {
+            "no": "Registrer forbedringstiltak i endringsprosessen",
+            "en": "Record improvements to the change process"
+          },
+          "role": {
+            "no": "Operasjonell risiko",
+            "en": "Operational risk"
+          },
+          "dueMinutes": 1440
+        }
+      ],
+      "decisions": [
+        {
+          "offsetMinutes": 20,
+          "text": {
+            "no": "Endringsfrys for berørte systemer til årsaken er kjent.",
+            "en": "Change freeze for affected systems until the cause is known."
+          },
+          "role": {
+            "no": "Endringsansvarlig",
+            "en": "Change manager"
+          },
+          "taskId": "chg-t1"
+        }
+      ],
+      "synthetic": true
+    }
+  ],
+  "plannedChanges": [
+    {
+      "id": "CHG-2026-118",
+      "title": {
+        "no": "Ny ruting av SMS-varsler",
+        "en": "New routing of SMS alerts"
+      },
+      "description": {
+        "no": "Varslingstjenesten sender SMS via en ny rute hos SMS-Linje for å rette de forsinkede meldingene.",
+        "en": "The notification service sends SMS through a new route at SMS-Linje to fix the delayed messages."
+      },
+      "systemId": "sys-notify",
+      "plannedStart": "2026-11-10T21:00:00",
+      "windowMinutes": 60,
+      "risk": "low",
+      "rollbackTested": true,
+      "owner": {
+        "no": "Kommunikasjonsteamet",
+        "en": "Communications team"
+      },
+      "checkpoints": [
+        {
+          "no": "Avhengige tjenester og kanaler er gjennomgått i kartet.",
+          "en": "Dependent services and channels have been reviewed in the map."
+        },
+        {
+          "no": "Tilbakerulling er testet i testmiljø.",
+          "en": "Rollback has been tested in a test environment."
+        },
+        {
+          "no": "Vinduet er lagt utenfor perioder med høy trafikk.",
+          "en": "The window is outside peak traffic periods."
+        }
+      ],
+      "decision": {
+        "outcome": "approved",
+        "reason": {
+          "no": "Lav risiko. Push-varsler dekker behovet hvis SMS stopper, og tilbakerulling er testet.",
+          "en": "Low risk. Push notifications cover the need if SMS stops, and rollback has been tested."
+        },
+        "role": {
+          "no": "Endringsansvarlig",
+          "en": "Change manager"
+        },
+        "decidedAt": "2026-11-02T10:15:00"
+      },
+      "synthetic": true
+    },
+    {
+      "id": "CHG-2026-121",
+      "title": {
+        "no": "Ny versjon av integrasjonsplattformen",
+        "en": "New version of the integration platform"
+      },
+      "description": {
+        "no": "Nytt forsøk på oppgraderingen som feilet i endring CHG-2026-114. Integrasjonsplattformen kjører bare i Norge og har ingen reserveløsning.",
+        "en": "New attempt at the upgrade that failed in change CHG-2026-114. The integration platform runs only in Norway and has no fallback."
+      },
+      "systemId": "sys-api",
+      "plannedStart": "2026-11-14T22:00:00",
+      "windowMinutes": 120,
+      "risk": "high",
+      "rollbackTested": false,
+      "owner": {
+        "no": "Integrasjonsteamet",
+        "en": "Integration team"
+      },
+      "checkpoints": [
+        {
+          "no": "Avhengige tjenester og kanaler er gjennomgått i kartet.",
+          "en": "Dependent services and channels have been reviewed in the map."
+        },
+        {
+          "no": "Tilbakerulling er testet i testmiljø.",
+          "en": "Rollback has been tested in a test environment."
+        },
+        {
+          "no": "Kundesenteret er varslet om vedlikeholdsvinduet.",
+          "en": "The contact centre has been told about the maintenance window."
+        },
+        {
+          "no": "Funnene fra hendelsen etter endring CHG-2026-114 er lukket.",
+          "en": "The findings from the incident after change CHG-2026-114 are closed."
+        }
+      ],
+      "synthetic": true
+    },
+    {
+      "id": "CHG-2026-124",
+      "title": {
+        "no": "Oppdatering av kortkoblingen",
+        "en": "Card connector update"
+      },
+      "description": {
+        "no": "Ny versjon av koblingen mellom kortplattformen og KortNord Prosessering.",
+        "en": "New version of the connector between the card platform and KortNord Prosessering."
+      },
+      "systemId": "sys-card",
+      "plannedStart": "2026-11-19T01:00:00",
+      "windowMinutes": 90,
+      "risk": "medium",
+      "rollbackTested": true,
+      "owner": {
+        "no": "Kortteamet",
+        "en": "Cards team"
+      },
+      "checkpoints": [
+        {
+          "no": "Avhengige tjenester og kanaler er gjennomgått i kartet.",
+          "en": "Dependent services and channels have been reviewed in the map."
+        },
+        {
+          "no": "Tilbakerulling er testet i testmiljø.",
+          "en": "Rollback has been tested in a test environment."
+        },
+        {
+          "no": "KortNord Prosessering har bekreftet vinduet.",
+          "en": "KortNord Prosessering has confirmed the window."
+        },
+        {
+          "no": "Stand-in-autorisasjon er kontrollert før start.",
+          "en": "Stand-in authorisation is checked before the start."
+        }
+      ],
+      "synthetic": true
+    },
+    {
+      "id": "CHG-2026-127",
+      "title": {
+        "no": "Ny regel i kredittvurderingen",
+        "en": "New rule in credit scoring"
+      },
+      "description": {
+        "no": "Endret beregning av betjeningsevne for forbrukslån.",
+        "en": "Changed affordability calculation for consumer loans."
+      },
+      "systemId": "sys-credit",
+      "plannedStart": "2026-11-25T18:00:00",
+      "windowMinutes": 60,
+      "risk": "medium",
+      "rollbackTested": true,
+      "owner": {
+        "no": "Kredittteamet",
+        "en": "Credit team"
+      },
+      "checkpoints": [
+        {
+          "no": "Avhengige tjenester og kanaler er gjennomgått i kartet.",
+          "en": "Dependent services and channels have been reviewed in the map."
+        },
+        {
+          "no": "Tilbakerulling er testet i testmiljø.",
+          "en": "Rollback has been tested in a test environment."
+        },
+        {
+          "no": "Datastrømmen fra integrasjonsplattformen er bekreftet i arkitekturdokumentasjonen.",
+          "en": "The data feed from the integration platform is confirmed in the architecture documentation."
+        }
+      ],
+      "synthetic": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "EX-2026-03",
+      "scenarioId": "sky-region",
+      "title": {
+        "no": "Bordøvelse: svikt hos skyleverandøren",
+        "en": "Tabletop exercise: cloud provider failure"
+      },
+      "date": "2026-09-18",
+      "participants": [
+        {
+          "no": "Beredskapsleder",
+          "en": "Incident manager"
+        },
+        {
+          "no": "Teknisk hendelsesleder",
+          "en": "Technical incident lead"
+        },
+        {
+          "no": "Leverandøransvarlig",
+          "en": "Supplier manager"
+        },
+        {
+          "no": "Kommunikasjonsansvarlig",
+          "en": "Communications lead"
+        },
+        {
+          "no": "Operasjonell risiko",
+          "en": "Operational risk"
+        }
+      ],
+      "providerIds": [],
+      "summary": {
+        "no": "Gjennomgang av bortfall hos Nimbus Sky i alle land. Fokus på reserveløsninger, varsling og informasjon til kunder.",
+        "en": "Walk-through of an outage at Nimbus Sky in all countries. Focus on fallbacks, alerting and customer information."
+      },
+      "synthetic": true
+    },
+    {
+      "id": "EX-2026-04",
+      "scenarioId": "failed-change",
+      "title": {
+        "no": "Bordøvelse: feil etter systemendring",
+        "en": "Tabletop exercise: failure after a system change"
+      },
+      "date": "2026-10-22",
+      "participants": [
+        {
+          "no": "Endringsansvarlig",
+          "en": "Change manager"
+        },
+        {
+          "no": "Beredskapsleder",
+          "en": "Incident manager"
+        },
+        {
+          "no": "Betalingsteamet",
+          "en": "Payments team"
+        },
+        {
+          "no": "Operasjonell risiko",
+          "en": "Operational risk"
+        }
+      ],
+      "providerIds": [
+        "prv-clearing"
+      ],
+      "summary": {
+        "no": "Gjennomgang av en mislykket endring i integrasjonsplattformen. Fokus på tilbakerulling og etterbehandling av betalinger.",
+        "en": "Walk-through of a failed change in the integration platform. Focus on rollback and reprocessing of payments."
+      },
+      "synthetic": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "F-01",
+      "title": {
+        "no": "Integrasjonsplattformen kan ikke flyttes til Sverige",
+        "en": "The integration platform cannot be moved to Sweden"
+      },
+      "description": {
+        "no": "API-laget kjører bare i Norge. Flytting ved bortfall er planlagt, men ikke etablert.",
+        "en": "The API layer runs only in Norway. Failover is planned but not in place."
+      },
+      "source": "exercise",
+      "exerciseId": "EX-2026-03",
+      "role": {
+        "no": "Integrasjonsteamet",
+        "en": "Integration team"
+      },
+      "due": "2027-03-31",
+      "status": "inProgress",
+      "nodeIds": [
+        "sys-api",
+        "prv-nimbus"
+      ],
+      "synthetic": true
+    },
+    {
+      "id": "F-02",
+      "title": {
+        "no": "Exit-planen for skyleverandøren er ikke ferdig",
+        "en": "The exit plan for the cloud provider is not finished"
+      },
+      "description": {
+        "no": "Øvelsen viste at banken ikke har en avtalt plan for å flytte de skybaserte systemene til en annen leverandør.",
+        "en": "The exercise showed that the bank has no agreed plan for moving its cloud-based systems to another provider."
+      },
+      "source": "exercise",
+      "exerciseId": "EX-2026-03",
+      "role": {
+        "no": "Innkjøpsleder IT",
+        "en": "Head of IT procurement"
+      },
+      "due": "2027-01-31",
+      "status": "inProgress",
+      "nodeIds": [
+        "prv-nimbus"
+      ],
+      "synthetic": true
+    },
+    {
+      "id": "F-03",
+      "title": {
+        "no": "Kundesenteret manglet standardsvar",
+        "en": "The contact centre lacked standard answers"
+      },
+      "description": {
+        "no": "Kundesenteret fikk ikke ferdige svar om innlogging og betaling de første 45 minuttene.",
+        "en": "The contact centre had no prepared answers about login and payments for the first 45 minutes."
+      },
+      "source": "exercise",
+      "exerciseId": "EX-2026-03",
+      "role": {
+        "no": "Kommunikasjonsansvarlig",
+        "en": "Communications lead"
+      },
+      "due": "2026-10-15",
+      "status": "closed",
+      "nodeIds": [
+        "ch-contact",
+        "svc-support"
+      ],
+      "synthetic": true
+    },
+    {
+      "id": "F-04",
+      "title": {
+        "no": "Skyleverandøren til Saksflyt er ikke bekreftet",
+        "en": "Saksflyt's cloud provider is not confirmed"
+      },
+      "description": {
+        "no": "Saksflyt AS har ikke oppgitt hvilken skyleverandør og hvilket land saksbehandlingsverktøyet kjører i.",
+        "en": "Saksflyt AS has not stated which cloud provider and which country the case management tool runs in."
+      },
+      "source": "exercise",
+      "exerciseId": "EX-2026-03",
+      "role": {
+        "no": "CRM-forvalter",
+        "en": "CRM administrator"
+      },
+      "due": "2026-12-15",
+      "status": "open",
+      "nodeIds": [
+        "prv-saksflyt",
+        "prv-nimbus"
+      ],
+      "synthetic": true
+    },
+    {
+      "id": "F-05",
+      "title": {
+        "no": "Tilbakerulling er ikke testet for alle versjoner",
+        "en": "Rollback is not tested for all versions"
+      },
+      "description": {
+        "no": "Øvelsen viste at tilbakerulling av integrasjonsplattformen bare er testet for forrige versjon.",
+        "en": "The exercise showed that rollback of the integration platform is only tested for the previous version."
+      },
+      "source": "exercise",
+      "exerciseId": "EX-2026-04",
+      "role": {
+        "no": "Endringsansvarlig",
+        "en": "Change manager"
+      },
+      "due": "2026-12-01",
+      "status": "open",
+      "nodeIds": [
+        "sys-api"
+      ],
+      "synthetic": true
+    },
+    {
+      "id": "F-06",
+      "title": {
+        "no": "Rutine for etterbehandling av betalinger mangler",
+        "en": "No procedure for reprocessing payments"
+      },
+      "description": {
+        "no": "Det finnes ingen beskrevet rutine for å finne og sende betalinger som feilet under en hendelse.",
+        "en": "There is no written procedure for finding and resending payments that failed during an incident."
+      },
+      "source": "exercise",
+      "exerciseId": "EX-2026-04",
+      "role": {
+        "no": "Betalingsteamet",
+        "en": "Payments team"
+      },
+      "due": "2026-11-30",
+      "status": "inProgress",
+      "nodeIds": [
+        "sys-pay",
+        "svc-payments"
+      ],
+      "synthetic": true
+    },
+    {
+      "id": "F-07",
+      "title": {
+        "no": "Avhengige tjenester ble ikke vurdert før endringen",
+        "en": "Dependent services were not assessed before the change"
+      },
+      "description": {
+        "no": "Endringsvurderingen nevnte bare integrasjonsplattformen, ikke tjenestene og kanalene som avhenger av den.",
+        "en": "The change assessment only covered the integration platform, not the services and channels that depend on it."
+      },
+      "source": "incident",
+      "incident": {
+        "no": "Feil etter endring CHG-2026-114",
+        "en": "Failure after change CHG-2026-114"
+      },
+      "role": {
+        "no": "Operasjonell risiko",
+        "en": "Operational risk"
+      },
+      "due": "2026-12-15",
+      "status": "open",
+      "nodeIds": [
+        "sys-api"
+      ],
+      "synthetic": true
+    },
+    {
+      "id": "F-08",
+      "title": {
+        "no": "Skyleverandøren deltok ikke i øvelsen",
+        "en": "The cloud provider did not take part in the exercise"
+      },
+      "description": {
+        "no": "Nimbus Sky var ikke med i øvelsen. Omfang og gjenopprettingstid fra leverandøren ble derfor bare antatt.",
+        "en": "Nimbus Sky did not take part in the exercise. The supplier's scope and recovery time were therefore only assumed."
+      },
+      "source": "exercise",
+      "exerciseId": "EX-2026-03",
+      "role": {
+        "no": "Leverandøransvarlig",
+        "en": "Supplier manager"
+      },
+      "due": "2027-02-28",
+      "status": "open",
+      "nodeIds": [
+        "prv-nimbus"
+      ],
+      "synthetic": true
+    }
+  ]
+}

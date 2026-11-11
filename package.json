@@ -1,0 +1,29 @@
+{
+  "name": "bank-resilience-map",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Konseptdemo: avhengighetskart og scenarioanalyse for operasjonell motstandsdyktighet i bank. Kun syntetiske data.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "tsx --test src/**/*.test.ts",
+    "typecheck": "tsc -b",
+    "dataset": "python3 scripts/build-dataset.py"
+  },
+  "dependencies": {
+    "@xyflow/react": "^12.8.4",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.18.0",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.2",
+    "tsx": "^4.20.5",
+    "typescript": "~5.9.2",
+    "vite": "^7.1.4"
+  }
+}
