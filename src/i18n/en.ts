@@ -72,42 +72,13 @@ const en: Messages = {
     ],
     startTitle: 'Ready to try it?',
     ctaGuided: 'Go to the demo',
-    ctaGuidedHint: 'You start in the scenario step with a guided walkthrough that takes about 3 minutes. You can skip the guide at any time. No account or personal data needed.',
+    ctaGuidedHint: 'Watch the short guide first, or go straight to the demo. You start in the scenario step with a scenario already filled in. No account or personal data needed.',
     principleTitle: 'Principle: show what is known, and what is not',
     principle:
       'Every impact can be traced through visible dependencies. Assumed, outdated and missing information is clearly marked instead of being hidden.',
   },
   guide: {
     label: 'Guide',
-    stepOf: 'Step {n} of {total}',
-    hide: 'Hide guide',
-    show: 'Show guide',
-    next: 'Next step',
-    steps: {
-      scenario: {
-        title: 'Choose a scenario',
-        text: 'The demo has two types of incident:',
-        items: [
-          '**Supplier failure:** Choose the supplier that fails. The countries the supplier operates in are shown automatically and treated as affected.',
-          '**Failure after a system change:** Choose the system that failed after a planned change.',
-        ],
-        after:
-          'Then choose the severity, the expected duration and whether the scenario runs as an incident or an exercise. The duration is compared with the recovery time objectives of the services. Press «Calculate impact» when you are ready.',
-      },
-      analysis: {
-        title: 'See the impact',
-        text: 'The map shows how the failure spreads from the left towards the customers on the right: red is down, striped red may be down, orange is degraded and green is working. Click an object to see its process and why it is affected. Choose «List» for a table of the services.',
-      },
-      incident: {
-        title: 'Coordinate the response',
-        text: 'Follow the incident here: change the status, mark tasks and add a decision. Everything is time-stamped.',
-      },
-      report: {
-        title: 'Share the summary',
-        text: 'The report brings together the scenario, impact, assumptions, data gaps and actions. It can be printed or saved as PDF.',
-      },
-    },
-    done: 'Done! Also try Suppliers, Changes and Exercises and findings in the menu at the top.',
   },
   kinds: {
     channel: 'Channel',
